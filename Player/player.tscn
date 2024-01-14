@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://dfi38hwq0cd2w"]
+[gd_scene load_steps=19 format=3 uid="uid://dfi38hwq0cd2w"]
 
+[ext_resource type="Script" path="res://Player/player.gd" id="1_4tb0v"]
 [ext_resource type="Texture2D" uid="uid://bt8gb54hjkhl1" path="res://assets/Player/player.png" id="1_a3awb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rc46s"]
@@ -126,10 +127,14 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4tb0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rc46s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q0dfx")
-animation = &"Run"
+animation = &"Death"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.07, 2.07)
