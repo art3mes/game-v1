@@ -605,32 +605,34 @@ text = "Points : 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Collectibles" parent="." instance=ExtResource("5_1erml")]
+[node name="Collectibles Group" type="Node" parent="."]
+
+[node name="Collectibles" parent="Collectibles Group" instance=ExtResource("5_1erml")]
 position = Vector2(557, 345)
 
-[node name="Collectibles2" parent="." instance=ExtResource("5_1erml")]
+[node name="Collectibles2" parent="Collectibles Group" instance=ExtResource("5_1erml")]
 position = Vector2(905, 205)
 
-[node name="Collectibles3" parent="." instance=ExtResource("5_1erml")]
+[node name="Collectibles3" parent="Collectibles Group" instance=ExtResource("5_1erml")]
 position = Vector2(865, 447)
 
-[node name="Collectibles4" parent="." instance=ExtResource("5_1erml")]
+[node name="Collectibles4" parent="Collectibles Group" instance=ExtResource("5_1erml")]
 position = Vector2(1097, 391)
 
-[node name="Collectibles5" parent="." instance=ExtResource("5_1erml")]
+[node name="Collectibles5" parent="Collectibles Group" instance=ExtResource("5_1erml")]
 position = Vector2(1531, 535)
 
-[node name="Collectibles6" parent="." instance=ExtResource("5_1erml")]
+[node name="Collectibles6" parent="Collectibles Group" instance=ExtResource("5_1erml")]
 position = Vector2(1981, 445)
 
-[node name="Collectibles7" parent="." instance=ExtResource("5_1erml")]
+[node name="Collectibles7" parent="Collectibles Group" instance=ExtResource("5_1erml")]
 position = Vector2(1483, 203)
 
-[node name="Collectibles8" parent="." instance=ExtResource("5_1erml")]
+[node name="Collectibles8" parent="Collectibles Group" instance=ExtResource("5_1erml")]
 position = Vector2(2403, 239)
 
-[node name="Collectibles9" parent="." instance=ExtResource("5_1erml")]
+[node name="Collectibles9" parent="Collectibles Group" instance=ExtResource("5_1erml")]
 position = Vector2(2181, 151)
 
-[node name="Collectibles10" parent="." instance=ExtResource("5_1erml")]
+[node name="Collectibles10" parent="Collectibles Group" instance=ExtResource("5_1erml")]
 position = Vector2(1863, 109)

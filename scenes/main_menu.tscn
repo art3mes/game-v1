@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://co4n5yep2000e"]
+
+[ext_resource type="Texture2D" uid="uid://ob1p3vjw1cp4" path="res://assets/Background/Brown.png" id="1_viu4c"]
+[ext_resource type="Texture2D" uid="uid://c7khyscfgq66j" path="res://assets/mainscreenLOGO.png" id="2_jyihb"]
+
+[node name="MainMenu" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_viu4c")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.0
+offset_top = -178.0
+offset_right = 274.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jyihb")
+stretch_mode = 3
+
+[node name="level1" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -30.0
+offset_right = -51.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 1"
+
+[node name="level2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -29.0
+offset_right = 209.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 2"
