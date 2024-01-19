@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://co4n5yep2000e"]
+[gd_scene load_steps=4 format=3 uid="uid://co4n5yep2000e"]
 
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_cpe5f"]
 [ext_resource type="Texture2D" uid="uid://ob1p3vjw1cp4" path="res://assets/Background/Brown.png" id="1_viu4c"]
 [ext_resource type="Texture2D" uid="uid://c7khyscfgq66j" path="res://assets/mainscreenLOGO.png" id="2_jyihb"]
 
 [node name="MainMenu" type="Node"]
+script = ExtResource("1_cpe5f")
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -15,7 +17,7 @@ grow_vertical = 2
 texture = ExtResource("1_viu4c")
 stretch_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="mainLOGO" type="TextureRect" parent="."]
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -58,3 +60,6 @@ offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Level 2"
+
+[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
