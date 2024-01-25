@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cjnj3e5jmetmb"]
 
-[ext_resource type="Script" path="res://scenes/doorANDbutton.gd" id="1_g0n1i"]
+[ext_resource type="Script" path="res://scenes/collectibles2.gd" id="1_g0n1i"]
 [ext_resource type="Texture2D" uid="uid://c2dge8mdurela" path="res://assets/Items/Fruits/Apple.png" id="1_mqa3f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7j84i"]
@@ -147,3 +147,5 @@ frame_progress = 0.870083
 position = Vector2(47, 39)
 scale = Vector2(2.375, 2.21875)
 shape = SubResource("CircleShape2D_lyq5y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
