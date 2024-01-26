@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8afey1sl5xmk"]
+[gd_scene load_steps=11 format=3 uid="uid://b8afey1sl5xmk"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_x8xci"]
 [ext_resource type="Texture2D" uid="uid://b6bc26sehu8t3" path="res://assets/Background/Purple.png" id="2_t0q2e"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bd4xyxfuy0v1b" path="res://scenes/main_character.tscn" id="4_ebu8l"]
 [ext_resource type="PackedScene" uid="uid://db05yg5vcas8d" path="res://scenes/finish.tscn" id="5_jflot"]
 [ext_resource type="PackedScene" uid="uid://cqcyjk8gpfved" path="res://scenes/level2.tscn" id="6_5mmos"]
-[ext_resource type="Texture2D" uid="uid://cc4jd82t6ht3q" path="res://assets/Other/doors1.png" id="8_a1he1"]
 [ext_resource type="PackedScene" uid="uid://cb0oq0a88e0b" path="res://scenes/door_and_button.tscn" id="8_b1x4j"]
 [ext_resource type="PackedScene" uid="uid://cuvi8640fckiu" path="res://scenes/collectibles.tscn" id="9_qnt1k"]
 
@@ -592,9 +591,6 @@ texture = ExtResource("3_li1id")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6gfwp")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cngv1"]
-size = Vector2(29.1032, 46.0082)
-
 [node name="level3" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -638,18 +634,19 @@ scale = Vector2(4.15625, 3.875)
 position = Vector2(3341, 111)
 scale = Vector2(2.44368, 1.99711)
 
-[node name="Door2" type="Sprite2D" parent="SceneObjects/doorANDbutton"]
-position = Vector2(-298, -146)
-scale = Vector2(3.68889, 3)
-texture = ExtResource("8_a1he1")
-vframes = 4
-metadata/_edit_group_ = true
+[node name="doorANDbutton2" parent="SceneObjects" instance=ExtResource("8_b1x4j")]
+position = Vector2(598, 457)
 
-[node name="Door" type="StaticBody2D" parent="SceneObjects/doorANDbutton/Door2"]
+[node name="Button" parent="SceneObjects/doorANDbutton2" index="0"]
+position = Vector2(3698, 71)
+scale = Vector2(4.21874, 4)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/doorANDbutton/Door2/Door"]
-position = Vector2(0.178566, -6.41975)
-shape = SubResource("RectangleShape2D_cngv1")
+[node name="Door" parent="SceneObjects/doorANDbutton2" index="1"]
+position = Vector2(-60, -173)
+scale = Vector2(3.51467, 2.95949)
+
+[node name="AnimationPlayer" parent="SceneObjects/doorANDbutton2" index="2"]
+root_node = NodePath("../../doorANDbutton2")
 
 [node name="Finish" parent="SceneObjects" instance=ExtResource("5_jflot")]
 position = Vector2(660, 267)
@@ -739,3 +736,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [editable path="SceneObjects/doorANDbutton"]
+[editable path="SceneObjects/doorANDbutton2"]

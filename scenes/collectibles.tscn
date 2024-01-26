@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cuvi8640fckiu"]
+[gd_scene load_steps=29 format=3 uid="uid://cuvi8640fckiu"]
 
 [ext_resource type="Script" path="res://scenes/collectibles.gd" id="1_6tgg8"]
 [ext_resource type="Texture2D" uid="uid://ceiux1j6wwu7r" path="res://assets/Items/Fruits/Cherries.png" id="1_c34a4"]
@@ -72,6 +72,30 @@ region = Rect2(480, 0, 32, 32)
 atlas = ExtResource("1_c34a4")
 region = Rect2(512, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hndvr"]
+atlas = ExtResource("3_jac6o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rksru"]
+atlas = ExtResource("3_jac6o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oxui"]
+atlas = ExtResource("3_jac6o")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6d87"]
+atlas = ExtResource("3_jac6o")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6thg"]
+atlas = ExtResource("3_jac6o")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g218p"]
+atlas = ExtResource("3_jac6o")
+region = Rect2(160, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_sojwj"]
 animations = [{
 "frames": [{
@@ -127,117 +151,47 @@ animations = [{
 "texture": SubResource("AtlasTexture_nrtn8")
 }],
 "loop": true,
-"name": &"default",
+"name": &"cherryVisuals",
 "speed": 20.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lr8od"]
-atlas = ExtResource("3_jac6o")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nduvi"]
-atlas = ExtResource("3_jac6o")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yhlf0"]
-atlas = ExtResource("3_jac6o")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lovdr"]
-atlas = ExtResource("3_jac6o")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jwapb"]
-atlas = ExtResource("3_jac6o")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1flk4"]
-atlas = ExtResource("3_jac6o")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_byxqm"]
-animations = [{
+}, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lr8od")
+"texture": SubResource("AtlasTexture_hndvr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nduvi")
+"texture": SubResource("AtlasTexture_rksru")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yhlf0")
+"texture": SubResource("AtlasTexture_7oxui")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lovdr")
+"texture": SubResource("AtlasTexture_u6d87")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jwapb")
+"texture": SubResource("AtlasTexture_a6thg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1flk4")
+"texture": SubResource("AtlasTexture_g218p")
 }],
-"loop": false,
+"loop": true,
 "name": &"poof",
-"speed": 8.0
+"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o0fbu"]
 radius = 20.025
 
-[sub_resource type="Animation" id="Animation_makq0"]
-length = 0.75
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("itemDisappearEffect:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("itemDisappearEffect:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["poof"]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_336u0"]
-_data = {
-"poof": SubResource("Animation_makq0")
-}
-
 [node name="Collectibles" type="Area2D"]
 script = ExtResource("1_6tgg8")
 
-[node name="cherryVISUALS" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 1.9375)
 sprite_frames = SubResource("SpriteFrames_sojwj")
-autoplay = "default"
-
-[node name="itemDisappearEffect" type="AnimatedSprite2D" parent="."]
-position = Vector2(9.53674e-07, 9.53674e-07)
-scale = Vector2(1.875, 1.75)
-sprite_frames = SubResource("SpriteFrames_byxqm")
 animation = &"poof"
-autoplay = "poof"
-frame = 5
+autoplay = "cherryVisuals"
+frame_progress = 0.3917
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o0fbu")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_336u0")
-}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
