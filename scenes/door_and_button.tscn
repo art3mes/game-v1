@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cb0oq0a88e0b"]
+[gd_scene load_steps=29 format=3 uid="uid://cb0oq0a88e0b"]
 
 [ext_resource type="Texture2D" uid="uid://b8ebb3fqv0fj0" path="res://assets/Items/Fruits/Strawberry.png" id="1_7x2it"]
 [ext_resource type="Script" path="res://scenes/door_and_button.gd" id="1_vs2lr"]
@@ -291,12 +291,65 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:sprite_frames")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_617jm")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Button:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0rkne"]
+resource_name = "itemCollected"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_617jm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0siox"]
 _data = {
 "DoorClosed": SubResource("Animation_6nn4o"),
 "DoorOpen": SubResource("Animation_tjpjk"),
-"RESET": SubResource("Animation_1t6ou")
+"RESET": SubResource("Animation_1t6ou"),
+"itemCollected": SubResource("Animation_0rkne")
 }
 
 [node name="doorANDbutton" type="Node2D"]
@@ -307,7 +360,6 @@ position = Vector2(-71, 132)
 scale = Vector2(3.625, 3.25)
 sprite_frames = SubResource("SpriteFrames_617jm")
 autoplay = "default"
-frame_progress = 0.789149
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="Button"]

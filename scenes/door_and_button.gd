@@ -9,6 +9,6 @@ func _ready():
 
 func _on_area_2d_body_entered(body):
 	if (body.name == "CharacterBody2D"):
-		button.free()
 		animation_player.speed_scale = 0.4
+		button.free()
 		animation_player.play("DoorOpen")

@@ -173,7 +173,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g218p")
 }],
-"loop": true,
+"loop": false,
 "name": &"poof",
 "speed": 6.0
 }]
@@ -189,7 +189,8 @@ scale = Vector2(2, 1.9375)
 sprite_frames = SubResource("SpriteFrames_sojwj")
 animation = &"poof"
 autoplay = "cherryVisuals"
-frame_progress = 0.3917
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o0fbu")
