@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd3ke5j2rjh1q"]
+
+[ext_resource type="Texture2D" uid="uid://ob1p3vjw1cp4" path="res://assets/Background/Brown.png" id="1_to5c5"]
+[ext_resource type="Texture2D" uid="uid://boqnwqjdp25n3" path="res://assets/selectCharacter.png" id="2_lwtuk"]
+
+[node name="CharacterSelect" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_to5c5")
+stretch_mode = 1
+
+[node name="mainLOGO" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -280.0
+offset_right = 262.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lwtuk")
+stretch_mode = 3
+
+[node name="backButton" type="Button" parent="."]
+offset_left = 459.0
+offset_top = 538.0
+offset_right = 671.0
+offset_bottom = 613.0
+text = "Back to the Main Menu"
