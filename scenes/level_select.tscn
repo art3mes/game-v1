@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://do4djpax6vnbd"]
+
+[ext_resource type="Script" path="res://Level Select.gd" id="1_0oqky"]
+[ext_resource type="Texture2D" uid="uid://ob1p3vjw1cp4" path="res://assets/Background/Brown.png" id="2_tb3s6"]
+[ext_resource type="Texture2D" uid="uid://3e0toc4s6qjn" path="res://assets/selectLevel.png" id="3_4rg7o"]
+[ext_resource type="Texture2D" uid="uid://0llbjrquaqtf" path="res://assets/buttons/level1.png" id="4_5817a"]
+[ext_resource type="Texture2D" uid="uid://clrxkkw1b0jox" path="res://assets/buttons/level2.png" id="5_63g5y"]
+[ext_resource type="Texture2D" uid="uid://32d21oi2sbx7" path="res://assets/buttons/level3.png" id="6_hb5xv"]
+
+[node name="Level Select" type="Node"]
+script = ExtResource("1_0oqky")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tb3s6")
+stretch_mode = 1
+
+[node name="mainLOGO" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -280.0
+offset_right = 262.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4rg7o")
+stretch_mode = 3
+
+[node name="level1" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -501.0
+offset_top = -154.0
+offset_right = -240.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_5817a")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="level2" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -151.0
+offset_right = 123.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_63g5y")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="level3" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = -150.0
+offset_right = 484.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_hb5xv")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="quit" type="Button" parent="."]
+offset_left = 459.0
+offset_top = 538.0
+offset_right = 671.0
+offset_bottom = 613.0
+text = "Back to the Main Menu"
+
+[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

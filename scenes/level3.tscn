@@ -629,7 +629,6 @@ position = Vector2(841, 431)
 [node name="Button" parent="SceneObjects/doorANDbutton" index="0"]
 position = Vector2(3455, 97)
 scale = Vector2(4.15625, 3.875)
-frame_progress = 0.0
 
 [node name="Door" parent="SceneObjects/doorANDbutton" index="1"]
 position = Vector2(3341, 111)
@@ -641,7 +640,6 @@ position = Vector2(598, 457)
 [node name="Button" parent="SceneObjects/doorANDbutton2" index="0"]
 position = Vector2(3698, 71)
 scale = Vector2(4.21874, 4)
-frame_progress = 0.0
 
 [node name="Door" parent="SceneObjects/doorANDbutton2" index="1"]
 position = Vector2(-60, -173)
