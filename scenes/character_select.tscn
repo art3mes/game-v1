@@ -382,7 +382,7 @@ offset_left = 459.0
 offset_top = 538.0
 offset_right = 671.0
 offset_bottom = 613.0
-text = "Back to the Main Menu"
+text = "Back "
 
 [node name="Player1" type="TextureButton" parent="."]
 
@@ -391,7 +391,7 @@ position = Vector2(181, 280)
 scale = Vector2(5.09375, 5.35938)
 sprite_frames = SubResource("SpriteFrames_gtyhr")
 autoplay = "default"
-frame_progress = 0.814015
+frame_progress = 0.0929226
 
 [node name="Player2" type="TextureButton" parent="."]
 
@@ -411,15 +411,21 @@ sprite_frames = SubResource("SpriteFrames_sb7sk")
 autoplay = "default"
 frame_progress = 0.601642
 
-[node name="Player4" type="TextureButton" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player4"]
-position = Vector2(952, 274)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(976, 285)
 scale = Vector2(6.1875, 6)
 sprite_frames = SubResource("SpriteFrames_jcef3")
 autoplay = "default"
-frame_progress = 0.0922037
+frame_progress = 0.181607
 
+[node name="Player4" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 887.0
+offset_top = 209.0
+offset_right = 1043.0
+offset_bottom = 389.0
+
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Player1" to="." method="_on_player_1_pressed"]
 [connection signal="pressed" from="Player2" to="." method="_on_player_2_pressed"]
 [connection signal="pressed" from="Player3" to="." method="_on_player_3_pressed"]
