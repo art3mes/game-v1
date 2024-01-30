@@ -1,5 +1,6 @@
-[gd_scene load_steps=59 format=3 uid="uid://bd3ke5j2rjh1q"]
+[gd_scene load_steps=56 format=3 uid="uid://bd3ke5j2rjh1q"]
 
+[ext_resource type="Script" path="res://scenes/character_select.gd" id="1_ji6u4"]
 [ext_resource type="Texture2D" uid="uid://ob1p3vjw1cp4" path="res://assets/Background/Brown.png" id="1_to5c5"]
 [ext_resource type="Texture2D" uid="uid://boqnwqjdp25n3" path="res://assets/selectCharacter.png" id="2_lwtuk"]
 [ext_resource type="Texture2D" uid="uid://bxahpkwltx6nd" path="res://assets/Main Characters/Mask Dude/Idle (32x32).png" id="3_e40wo"]
@@ -92,9 +93,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w56kv"]
-size = Vector2(133.5, 155)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhhvt"]
 atlas = ExtResource("4_vpo3a")
 region = Rect2(0, 0, 32, 32)
@@ -179,9 +177,6 @@ animations = [{
 "name": &"default",
 "speed": 7.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbd4"]
-size = Vector2(138, 142)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yt7k7"]
 atlas = ExtResource("5_ha0h5")
@@ -268,9 +263,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4po77"]
-size = Vector2(163.5, 163)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_04ejm"]
 atlas = ExtResource("6_75av8")
 region = Rect2(0, 0, 32, 32)
@@ -356,10 +348,8 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3wfu"]
-size = Vector2(166.5, 175)
-
 [node name="CharacterSelect" type="Node"]
+script = ExtResource("1_ji6u4")
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -394,20 +384,16 @@ offset_right = 671.0
 offset_bottom = 613.0
 text = "Back to the Main Menu"
 
-[node name="Player1" type="Area2D" parent="."]
+[node name="Player1" type="TextureButton" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player1"]
 position = Vector2(181, 280)
 scale = Vector2(5.09375, 5.35938)
 sprite_frames = SubResource("SpriteFrames_gtyhr")
 autoplay = "default"
-frame_progress = 0.106328
+frame_progress = 0.814015
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
-position = Vector2(183, 288)
-shape = SubResource("RectangleShape2D_w56kv")
-
-[node name="Player2" type="Area2D" parent="."]
+[node name="Player2" type="TextureButton" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2"]
 position = Vector2(437.25, 272.25)
@@ -416,11 +402,7 @@ sprite_frames = SubResource("SpriteFrames_ky6lp")
 autoplay = "default"
 frame_progress = 0.674103
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
-position = Vector2(435, 293)
-shape = SubResource("RectangleShape2D_rkbd4")
-
-[node name="Player3" type="Area2D" parent="."]
+[node name="Player3" type="TextureButton" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player3"]
 position = Vector2(685, 276)
@@ -429,11 +411,7 @@ sprite_frames = SubResource("SpriteFrames_sb7sk")
 autoplay = "default"
 frame_progress = 0.601642
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player3"]
-position = Vector2(691, 290)
-shape = SubResource("RectangleShape2D_4po77")
-
-[node name="Player4" type="Area2D" parent="."]
+[node name="Player4" type="TextureButton" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player4"]
 position = Vector2(952, 274)
@@ -442,6 +420,7 @@ sprite_frames = SubResource("SpriteFrames_jcef3")
 autoplay = "default"
 frame_progress = 0.0922037
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player4"]
-position = Vector2(957, 291)
-shape = SubResource("RectangleShape2D_q3wfu")
+[connection signal="pressed" from="Player1" to="." method="_on_player_1_pressed"]
+[connection signal="pressed" from="Player2" to="." method="_on_player_2_pressed"]
+[connection signal="pressed" from="Player3" to="." method="_on_player_3_pressed"]
+[connection signal="pressed" from="Player4" to="." method="_on_player_4_pressed"]

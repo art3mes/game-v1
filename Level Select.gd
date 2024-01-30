@@ -2,15 +2,18 @@ extends Node
 
 
 func _on_level_1_pressed():
-	get_tree().change_scene_to_file("res://scenes/level1.tscn")
+	GlobalScript.level_parameters.level = 1
+	get_tree().change_scene_to_file("res://scenes/character_select.tscn")
 
 
 func _on_level_2_pressed():
-	get_tree().change_scene_to_file("res://scenes/level2.tscn")
+	GlobalScript.level_parameters.level = 2
+	get_tree().change_scene_to_file("res://scenes/character_select.tscn")
 
 
 func _on_level_3_pressed():
-	get_tree().change_scene_to_file("res://scenes/level3.tscn")
+	GlobalScript.level_parameters.level = 3
+	get_tree().change_scene_to_file("res://scenes/character_select.tscn")
 
 
 func _on_quit_pressed():
