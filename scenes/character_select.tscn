@@ -427,7 +427,7 @@ offset_right = 804.0
 offset_bottom = 386.0
 
 [node name="Player4" type="AnimatedSprite2D" parent="."]
-position = Vector2(965, 277)
+position = Vector2(966, 269)
 scale = Vector2(6.1875, 6)
 sprite_frames = SubResource("SpriteFrames_jcef3")
 autoplay = "default"
@@ -435,10 +435,10 @@ frame_progress = 0.181607
 
 [node name="Player4_button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = 891.0
-offset_top = 214.0
-offset_right = 1047.0
-offset_bottom = 379.0
+offset_left = 888.0
+offset_top = 208.0
+offset_right = 1044.0
+offset_bottom = 373.0
 
 [connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Player1_button" to="." method="_on_player_1_button_pressed"]
