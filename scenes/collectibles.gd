@@ -13,7 +13,7 @@ func _on_body_entered(body):
 		points_label.text = "Points : "+ str(GlobalScript.level_parameters.points)
 		
 		
-		
+		animated_sprite_2d.speed_scale = 1.5
 		get_node("AnimatedSprite2D").play("poof")
 		await get_node("AnimatedSprite2D").animation_finished
 		queue_free()

@@ -191,7 +191,6 @@ animation = &"poof"
 autoplay = "cherryVisuals"
 frame = 5
 frame_progress = 1.0
-speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o0fbu")
