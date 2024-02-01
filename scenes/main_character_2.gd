@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
+# THIS CHARACTER HAS DOUBLE JUMP
+
 const SPEED = 400.0
 const JUMP_VELOCITY = -700.0
+var jump_count = 0
+var jump_max = 2
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var sprite_2d = $Sprite2D
@@ -17,14 +21,18 @@ func _physics_process(delta):
 	else:
 		sprite_2d.animation = "default"
 
-	# Add the gravity.
+	# Add the gravity. FALL
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		sprite_2d.animation = "jumping"
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and jump_count != 0:
+		jump_count = 0
+		
+	if Input.is_action_just_pressed("jump") and jump_count < jump_max:
 		velocity.y = JUMP_VELOCITY
+		jump_count += 1
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("left", "right")

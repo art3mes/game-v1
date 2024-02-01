@@ -188,18 +188,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ffo5"]
-radius = 11.0
-height = 32.0
+radius = 29.0
+height = 74.0
 
 [node name="Character2" type="CharacterBody2D"]
 script = ExtResource("1_jgk67")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.5, 4.76837e-07)
-scale = Vector2(0.96875, 1)
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(2.5625, 2.625)
 sprite_frames = SubResource("SpriteFrames_f30yv")
 autoplay = "default"
 frame_progress = 0.00238972
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 5)
 shape = SubResource("CapsuleShape2D_6ffo5")
